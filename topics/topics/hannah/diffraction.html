@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
   <title>Rendering Diffraction</title>
-  <link rel="icon" href="../img/icon.png">
+  <link rel="icon" href="../../img/icon.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- replace with our own css? -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../../css/topics/topic.css">
+  <link rel="stylesheet" type="text/css" href="../../css/topic.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
   <!-- mathjax needed to display equations, just write them like in LaTeX-->
   <script type="text/x-mathjax-config">
@@ -38,16 +38,16 @@
         <li class="dropdown">
           <a class="dropbtn">Menu</a>
           <div class="dropdown-content">
-            <a href="../topics/clovis/context.html">Context</a>
-            <a href="../topics/ali/physics.html">Fourier Analysis</a>
-            <a href="../topics/ali/maxwell.html">Maxwell's Equations</a>
-            <a href="../topics/ali/optics.html">Optics</a>
-            <a href="../topics/hannah/brdf.html">BRDF</a>
-            <a href="../topics/india/SpectralRendering.html">Spectral Rendering</a>
-            <a href="../topics/india/IndiaSection.html">Rays vs Waves</a>
-            <a href="../topics/india/WaveBRDF.html">Wave BRDF</a>
-            <a href="../topics/hannah/diffraction.html">Rendering Diffraction</a>
-            <a href="../topics/india/Difficulties.html">Difficulties</a>
+            <a href="../clovis/context.html">Context</a>
+            <a href="../ali/physics.html">Fourier Analysis</a>
+            <a href="../ali/maxwell.html">Maxwell's Equations</a>
+            <a href="../ali/optics.html">Optics</a>
+            <a href="../hannah/brdf.html">BRDF</a>
+            <a href="../india/SpectralRendering.html">Spectral Rendering</a>
+            <a href="../india/IndiaSection.html">Rays vs Waves</a>
+            <a href="../india/WaveBRDF.html">Wave BRDF</a>
+            <a href="../hannah/diffraction.html">Rendering Diffraction</a>
+            <a href="../india/Difficulties.html">Difficulties</a>
           </div>
         </li>
       </ul>
@@ -78,8 +78,8 @@
           A common example are compact discs.
         </p>
         <div class="imagebox" style="width:90%">
-          <img src="../img/hannah/cd_micro.jpg" alt="details of CD surface" style="float:left; width:45%; margin: 2%">
-          <img src="../img/hannah/cd_color.png" alt="CD" style="float:right; width:40%; margin: 2%">
+          <img src="../../img/hannah/cd_micro.jpg" alt="details of CD surface" style="float:left; width:45%; margin: 2%">
+          <img src="../../img/hannah/cd_color.png" alt="CD" style="float:right; width:40%; margin: 2%">
           <p style="clear: both;">
           <div class="container" style="width:100%">
             <hr>
@@ -87,14 +87,14 @@
           </div>
         </div>
         <p>
-          We model waves according to the <a href="../topics/india/IndiaSection.html">
+          We model waves according to the <a href="../india/IndiaSection.html">
           Huygens-Fresnel Principle </a> and let each peak in the microgeometry of a surface
           be a source of spherical waves. Then it is easy to see that we get different interference
           maxima for different wavelengths, which is why the incident light is split
           into its spectral colors when reflected.
         </p>
         <div class="imagebox" style="width:95%">
-          <img src="../img/hannah/diffraction.png" alt="diffraction on nanostructure">
+          <img src="../../img/hannah/diffraction.png" alt="diffraction on nanostructure">
           <div class="container" style="width:100%">
             <hr>
             <p> Diffraction at surface details</p>
@@ -121,24 +121,24 @@
           suffices.
         </p>
         <p>
-          Using <a href="../topics/ali/physics.html#fouriertransform" >Fourier transforms</a>, <a href="#stam">Stam</a> could analytically derive a
-          <a href="../topics/hannah/brdf.html">BRDF</a> to render diffraction on a CD surface.
+          Using <a href="../ali/physics.html#fouriertransform" >Fourier transforms</a>, <a href="#stam">Stam</a> could analytically derive a
+          <a href="../hannah/brdf.html">BRDF</a> to render diffraction on a CD surface.
         </p>
         <div class="imagebox" style="width:60%">
-          <img src="../img/hannah/stam_cd.jpg" alt="rendered CD">
+          <img src="../../img/hannah/stam_cd.jpg" alt="rendered CD">
           <div class="container" style="width:100%">
             <hr>
             <p> Rendered image of a CD [<a href="#stam">Stamm 1999</a>] </p>
           </div>
         </div>
         <p>
-          Although Stam developed a method to derive a <a href="../topics/hannah/brdf.html">BRDF</a>
+          Although Stam developed a method to derive a <a href="../hannah/brdf.html">BRDF</a>
           as a Fourier transform of a function of a height field representing the microgeometry of
           the surface in theory, practically
           it can only be used to efficiently render diffraction in special cases.
           An example are the CDs avove. The nearly periodic structure, allows
           relatively simple statistical models to describe the height field, so that
-          the <a href="../topics/hannah/brdf.html">BRDF</a> can be derived analytically. For more complex structures, Stam's method
+          the <a href="../hannah/brdf.html">BRDF</a> can be derived analytically. For more complex structures, Stam's method
           would require evaluation and integration of Fourier transforms at real time
           during interactive rendering which would be computationally highly inefficient.
         </p>
@@ -149,8 +149,8 @@
           Stam's method.
         </p>
         <div class="imagebox" style="width:90%">
-          <img src="../img/hannah/xenopeltis_nat.JPG" alt="xenopeltis">
-          <img src="../img/hannah/xenopeltis.jpg" alt="AFM of xenopeltis skin">
+          <img src="../../img/hannah/xenopeltis_nat.JPG" alt="xenopeltis">
+          <img src="../../img/hannah/xenopeltis.jpg" alt="AFM of xenopeltis skin">
           <div class="container" style="width:100%">
             <hr>
             <p>The skin of a sunbeam snake (xenopeltis) [<a href="#xeno_nat">Wikipedia</a>] under atomic force microscopy [<a href="#xeno">Dhillon et al.</a>].</p>
@@ -158,7 +158,7 @@
         </div>
         <p>
           <a href="#xeno2">Dhillon et al.</a> proposed a new approach to efficiently
-          render diffraction on more complex nanostructures using a <a href="../topics/hannah/brdf.html">BRDF</a> based on Stam's method.
+          render diffraction on more complex nanostructures using a <a href="../hannah/brdf.html">BRDF</a> based on Stam's method.
           With polynomial approximations and pre-computed lookup tables of coefficients,
           interactive rendering with periodic to seemingly random height-fields was made possible.
           In recent years, the number of lookup tables needed to produce accurate results
@@ -166,16 +166,16 @@
         </p>
         <div class="imagebox" style="width:80%">
           <div class="imgcolumn">
-            <img src="../img//hannah/ref.jpg">
+            <img src="../../img//hannah/ref.jpg">
           </div>
           <div class="imgcolumn">
-            <img src="../img/hannah/2_2016.jpg" >
+            <img src="../../img/hannah/2_2016.jpg" >
           </div>
           <div class="imgcolumn">
-            <img src="../img/hannah/3_2014.jpg" >
+            <img src="../../img/hannah/3_2014.jpg" >
           </div>
           <div class="imgcolumn">
-            <img src="../img/hannah/25_2014.jpg">
+            <img src="../../img/hannah/25_2014.jpg">
           </div>
           <div class="container" style="width:100%">
             <hr>
@@ -186,7 +186,7 @@
         </div>
 
       <div class="container" style="width:100%">
-        <a class="next" href="../topics/india/Difficulties.html"></a>
+        <a class="next" href="../india/Difficulties.html"></a>
         <br>
         <br>
       </div>
