@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--Template: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_webpage&stacked=h  -->
+<html lang="en">
+<head>
+  <title>Fourier Analysis</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../img/icon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/topics/topic.css">
+  <link rel="stylesheet" type="text/css" href="../../css/topics/ali/table.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400" rel="stylesheet">
+  <!-- mathjax needed to display equations, just write them like in LaTeX-->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+  <!-- end of mathjax configuration -->
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="../../index.html">Home</a></li>
+          <li>
+          <li class="dropdown">
+            <a class="dropbtn">Menu</a>
+            <div class="dropdown-content">
+              <!-- add links to other topics -->
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/clovis/context.html">Context</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/ali/physics.html">Fourier Analysis</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/ali/maxwell.html">Maxwell's Equations</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/ali/optics.html">Optics</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/hannah/brdf.html">BRDF</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/india/SpectralRendering.html">Spectral Rendering</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/india/IndiaSection.html">Rays vs Waves</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/india/WaveBRDF.html">Wave BRDF</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/hannah/diffraction.html">Rendering Diffraction</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/india/Difficulties.html">Difficulties</a>
+            </div>
+          </li>
+        </ul>
+        <p class="navbar-text" id="navbar-centre">Physics Based Rendering</p>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://www.doc.ic.ac.uk/~imm1117/cv/ali.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="container-fluid text-center">
+  <div class="row content" >
+    <div class="col-sm-2 sidenav">
+      <!-- don't have to use the sidebar -->
+    </div>
+
+    <div class="col-sm-8 text-left">
+      <h1>Fourier Analysis</h1>
+      <h2 id="main-body-maths" class="text-body text">Fourier Series</h2>
+      <p id="main-body-fourierseries" class="text-body text">
+        The Fourier series acts to represent funtions as the sum of simple sine waves. This is the main
+        concept of the Fourier transform which is discussed slightly further down this web page.
+        <br>
+        A Fourier series is an expansion of a periodic function in terms of an infinite sum of sines and cosines. In the
+        context that we will be looking at this later that means an electromagnetic wave. The study of Fourier series
+        is known as
+        <a href="https://en.wikipedia.org/wiki/Harmonic_analysis"><u>harmonic analysis</u></a>
+        and is extremely useful as a way to break up and simplify any periodic function into a set of terms that can be
+        substituted in, solved individually, and then recombined to obtain the solution to the original problem. [<a href="#references">2</a>]
+        <br>
+        A general <a href="http://mathworld.wolfram.com/FourierSeries.html"><u>Fourier Series</u></a> of a function
+        $f(x)$, is defined (on the interval $[-\pi,\pi]$) as follows:
+        <br><div class="center">
+        $f(x) = \frac{1}{2}a_0 + \sum_{n=1}^{\infty}a_ncos(nx) + \sum_{n=1}^{\infty}b_nsin(nx)$
+      </div>
+        <br> where:
+        <br><div class="center">
+        $a_0 = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)dx$ <br>
+        $a_n = \frac{1}{\pi}\int_{-\pi}^{\pi}cos(nx)dx$ <br>
+        $b_n = \frac{1}{\pi}\int_{-\pi}^{\pi}sin(nx)dx$ <br></div>
+        This series can be extended to cover functions defined on any interval.
+      </p>
+      <hr>
+
+      <h2 id="transform" class="text-body text"><a id="fouriertransform"></a>Idea of the Fourier Transform</h2>
+      <p id="main-body-fouriertransform" class="text-body text">
+        The Fourier transform of a function of time is a complex-valued function of frequency,
+         whose absolute value represents the amount of that frequency present in the original function,
+          and whose complex argument is the phase offset of the basic
+          <span title="A curve similar to the sine function but possibly shifted in phase, period, amplitude, or any combination thereof.">
+            <b>sinusoid</b></span> in that frequency. [<a href="#references">3</a>]
+          <br>
+          <br>
+          The above definition may sound complicated, but the Fourier transform really does a very intuitive thing.
+          <br>
+          What the above means, is that the Fourier transform takes a time-based pattern,
+          measures every possible cycle and decomposes it into the frequencies that combine to make it.
+          Essentially, we are turning a signal into a set of circular paths at every point in time in the
+          signal. If we can understand all these circular paths, then we can understand the signal.
+          <br>
+          It’s like filtering a soup to find out what it’s made from. Use a set of filters to
+           find out the different ingredients that make up the soup. What this does is essentially give you a “recipe” for the soup.
+            Recipes are often easier to understand than the soup. Having the recipe also means that you know how to
+            make the soup, and since you have all the filtered parts, you can make the soup again! The
+            Fourier Transform finds the recipe for a signal, like our soup process:
+          <ul>
+            <li class="spaced">Start with a time-based signal </li>
+            <li class="spaced">Apply filters to measure each possible "circular ingredient" </li>
+            <li class="spaced">Finally collect the full recipe, knowing the amount of each "circular ingredient"</li>
+          </ul>
+      </p>
+      <hr>
+
+      <h2 id="main-body-maths" class="text-body text">Maths of the Fourier Transform</h2>
+      <p id="main-body-fouriermaths" class="text-body text">
+        There are two main cases for the Fourier transform: <br>
+        <div style="text-indent:25px">
+          <b>(1)</b> $f:[a,b]\rightarrow\mathbb{C}(\mathbb{R})$<br>
+        </div>
+        <div style="text-indent:25px">
+          <b>(2)</b> $f:\mathbb{R}\rightarrow\mathbb{C}(\mathbb{R})$<br>
+        </div><br>
+        <b>(2)</b> is quite complicated to think about straight away so we will begin by trying to get an idea of
+        what's going on in <b>(1)</b> by considering a vector in $\mathbb{R}^3$.
+        <br>
+        Simply put, the Fourier transform of a function, $f$ say, is the decomposition of $f$ into simpler functions.
+        To try and visualise what's going on we will consider a vector, $\vec{a}\in\mathbb{R}^3$.
+        <div class="imagebox" style="width:40%">
+        <img src="https://www.doc.ic.ac.uk/~imm1117/img/ali/3D_Vector.svg" alt="[1]" title="[1]">
+            <div class="container" style="width:100%">
+              <hr>
+              <p>Diagram illustrating a three-dimensional vector, $\vec{a}$. [<a href="#references">1</a>]</p>
+            </div>
+        </div>
+        Now let $\vec{a_x} = \vec{a_1}$, $\vec{a_y} = \vec{a_2}$, and $\vec{a_z} = \vec{a_3}$.
+        <br>
+        We know that $\vec{a}$ can be written: <br>
+        <div style="text-align:center">
+        $\vec{a} = \vec{a_1}\begin{bmatrix}1 \\0 \\0 \end{bmatrix} + \vec{a_2}\begin{bmatrix}0 \\1 \\0 \end{bmatrix} +
+        \vec{a_3}\begin{bmatrix}0 \\0 \\1 \end{bmatrix} = \sum_{i=1}^{3}\vec{a_i}{e_i}$
+        </div>
+        <br>Where $e_i$ represents the $i^{th}$ element of the basis of $\mathbb{R}^3$ To get the $i^{th}$ component
+        of $\vec{a}$ we use the scalar product on our vector $\vec{a}$ with $e_i$:
+        <br>
+        <div style="text-align:center">
+          $\vec{v_i} = \vec{v}\cdot\vec{e_i}$
+        </div>
+        What we have done above is show that a vector, in this case $\vec{a}$, can be broken down into a set of smaller
+        vectors, and then rebuilt by summing these smaller vectors together, this is much like how the Fourier transform
+        works. For instance, consider a vector $\vec{v}\in\mathbb{R}^\infty$, by the previous definition then:
+        <div style="text-align:center">
+          $\vec{v}=\sum_{i=1}^{\infty}\vec{v_i}{e_i}$
+        </div>
+        Where $e_i\in\mathbb{R}^{\infty}$. Now suppose $\vec{v}$ is a function, $f(x)$, well, Fourier showed that this idea that
+        we have applied to the vectors above, can be applied to functions.
+        The fourier transform is usually denoted $\hat{f}$. There are a few definitions but the most common is defined
+        below of an integratble function $f : \mathbb{R} \rightarrow \mathbb{C}$ <b>(2)</b>.
+        The transform is a generalization of the complex Fourier series, seen
+        <a href="http://mathworld.wolfram.com/FourierSeries.html"><u>here</u></a> <i>(and shown generally above)</i>,
+        in the limit as $L\rightarrow\infty$. Replace the discrete $a_n$ with the continuous $f(x)dx$ while letting
+        $\frac{n}{L}\rightarrow x$. Then the sum is changed to an integral, and the tranform is defined as:
+        <br><div class="center">
+        $\hat{f}(\xi)= \int_{-\infty}^{\infty} f(x)e^{2\pi ix\xi}dx$,</div>
+        <br>
+        For any $\xi\in\mathbb{R}$. Where the $x$ represents time, the transform variable $\xi$ represents frequency.
+        [<a href="#references">4</a>]
+        <br>
+        <div class="imagebox" style="width:50%">
+          <div align=center>
+          <iframe width="100%" height="300px"
+              src="https://www.youtube.com/embed/spUNpyF58BY">
+          </iframe></div>
+            <div class="container" style="width:100%">
+              <hr>
+              <p>A detailed explanation of the Fourier transform.</p>
+            </div>
+        </div>
+      </p>
+
+      <div class="container" style="width:100%">
+        <a class="next" href="https://www.doc.ic.ac.uk/~imm1117/topics/ali/maxwell.html"></a>
+        <br>
+        <br>
+      </div>
+
+    </div>
+
+
+    <div class="col-sm-2 sidenav">
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <h3 style="text-align:center; font-weight:300">References</h3>
+  <ol id="references">
+    <li class="spaced">
+     "File:3D Vector.svg - Wikimedia Commons", Commons.wikimedia.org, 2018. [Online]. Available:
+    <a href="https://commons.wikimedia.org/wiki/File:3D_Vector.svg">
+      https://commons.wikimedia.org/wiki/File:3D_Vector.svg.</a> [Accessed: 07- Mar- 2018].
+</li>
+    <li class="spaced">
+    "Fourier Series | Brilliant Math & Science Wiki", Brilliant.org, 2018. [Online]. Available:
+    <a href="https://brilliant.org/wiki/fourier-series/">https://brilliant.org/wiki/fourier-series/.</a>
+    [Accessed: 05- Mar- 2018].
+    </li>
+    <li class="spaced">
+    "An Interactive Guide To The Fourier Transform – BetterExplained", Betterexplained.com, 2018. [Online]. Available:
+    <a href="https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/">
+      https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/.</a>
+    [Accessed: 11- Mar- 2018].
+    </li>
+    <li class="spaced">
+    "Properties of Fourier Transform", Fourier.eng.hmc.edu, 2018. [Online]. Available:
+    <a href="http://fourier.eng.hmc.edu/e101/lectures/handout3/node2.html">
+      http://fourier.eng.hmc.edu/e101/lectures/handout3/node2.html.</a> [Accessed: 12- Mar- 2018].
+    </li>
+
+  </ol>
+</footer>
+
+</body>
+</html>

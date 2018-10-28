@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--Template: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_webpage&stacked=h  -->
+<html lang="en">
+<head>
+  <title>Ray vs Wave based</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../img/icon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/topics/topic.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+  <!-- end of mathjax configuration -->
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="https://www.doc.ic.ac.uk/~imm1117/">Home</a></li>
+        <li>
+        <li class="dropdown">
+          <a class="dropbtn">Menu</a>
+          <div class="dropdown-content">
+            <a href="https://www.doc.ic.ac.uk/~imm1117/topics/clovis/context.html">Context</a>
+            <a href="https://www.doc.ic.ac.uk/~imm1117/topics/ali/physics.html">Fourier Analysis</a>
+            <a href="https://www.doc.ic.ac.uk/~imm1117/topics/ali/maxwell.html">Maxwell's Equations</a>
+            <a href="https://www.doc.ic.ac.uk/~imm1117/topics/ali/optics.html">Optics</a>
+            <a href="https://www.doc.ic.ac.uk/~imm1117/topics/hannah/brdf.html">BRDF</a>
+            <a href="https://www.doc.ic.ac.uk/~imm1117/topics/india/SpectralRendering.html">Spectral Rendering</a>
+            <a href="https://www.doc.ic.ac.uk/~imm1117/topics/india/IndiaSection.html">Rays vs Waves</a>
+            <a href="https://www.doc.ic.ac.uk/~imm1117/topics/india/WaveBRDF.html">Wave BRDF</a>
+            <a href="https://www.doc.ic.ac.uk/~imm1117/topics/hannah/diffraction.html">Rendering Diffraction</a>
+            <a href="https://www.doc.ic.ac.uk/~imm1117/topics/india/Difficulties.html">Difficulties</a>
+          </div>
+        </li>
+      </ul>
+      <p class="navbar-text" id="navbar-centre">Physics Based Rendering</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://www.doc.ic.ac.uk/~imm1117/cv/indexIndia.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid text-center">
+  <div class="row content" >
+    <div class="col-sm-2 sidenav">
+      <!-- don't have to use the sidebar -->
+    </div>
+
+    <div class="col-sm-8 text-left">
+      <h1> Ray Based Methods vs Wave Based Methods</h1>
+
+As photons of light are observed to exhibit properties both based on waves and rays, we can approach the rendering of light in several ways. Each method has individual advantages and disadvantages.
+      <hr>
+      <h2> Rays</h2>
+      <p>When shapes are simple, the patterns created by rays (and therefore the light patterns) can be simply predicted using the location of the ray’s sources, and considering the reflected intensity and angle. This can be done using ray tracers. However, this is only truly accurate for completely flat, infinite surfaces, so therefore works well for shapes such as enclosed rectangles, but when gaps or texture are introduced this becomes more tricky.
+      </p>
+	    <p>Using ray tracers in this way completely ignores the effects of diffraction, and must be combined with other methods in order to take them into account. A way of adding a simplified version of diffraction is to use the Huygens-Fresnel Principle. The principle states: a light wave can be represented by an infinite number of hemispherical light sources lined up along its wavefront.
+      </p>
+      <div class="imagebox" style="width:50%">
+        <img src="https://www.doc.ic.ac.uk/~imm1117/img/india/HuygensFresnel.png" alt="Huygens Fresnel Principle">
+        <div class="container" style="width:100%">
+          <hr>
+          <p> The Huygens-Fresnel Principle </p>
+        </div>
+      </div>
+	    <p>Clearly, representing infinite light sources is not computationally possible, so we must limit the number of them, which can cause some inaccuracy depending on the conditions of the model. We can also reduce the required number of sources by only representing the edges. However this technique is still limited in how it handles some of the wave based interactions of light, for example interference, as it does not take the phase of the light (the phase coming from the wave representation)
+      </p>
+      <hr>
+      <h2> Waves </h2>
+      <p> Obviously, basing the representation on waves rather than rays will inherently take into account the wave based effects that were missing from the previous implementation. The most obvious method for doing this is by solving the appropriate wave equation. The equation for waves in one dimension can be derived like this:
+      </p>
+
+
+      Take a wave moving with a trace $f(x)$. After $t$ seconds, the wave will have moved a distance $vt$, where $v$ is the speed of the wave. We can then write its trace at this point as $f(x \pm vt)$, as this shift can occur in either direction.
+
+      Let $x' = x \pm vt$. We then take the partial derivative with respect to $x$, keeping $t$ constant:
+
+      \begin{equation}
+      \frac{\partial x'}{\partial x} = 1
+      \end{equation}
+
+      \begin{equation}
+          {\partial x'} = {\partial x}
+      \end{equation}
+
+      And also the partial derivative with respect to $t$, keeping $x$ constant:
+
+      \begin{equation}
+      \frac{\partial x'}{\partial t} = \pm v
+      \end{equation}
+
+      We then take the second derivative of $f$, substituting in $(1)$ above:
+      \begin{equation}
+          \frac{\partial}{\partial u}(\frac{\partial x'}{\partial u})
+          =  \frac{\partial}{\partial x}(\frac{\partial x'}{\partial x})
+      \end{equation}
+      Then setting this equal, with the substitution of $(3)$:
+      \begin{equation}
+          \frac{\partial}{\partial x}(\frac{\partial x'}{\partial x})
+          =  \pm \frac{1}{v}\frac{\partial}{\partial t}(\pm \frac{1}{v}\frac{\partial x'}{\partial t})
+      \end{equation}
+
+      This gives us the wave equation for 1D models. This can be extended for models with more dimensions, and solved for any of the variables involved.
+      \begin{equation}
+      \frac{\partial^2 x' }{\partial x^2} =
+      \frac{1}{v^2} \frac{\partial^2 x'}{\partial t^2}
+      \end{equation}
+      <p>As you can see, this is a second order differential equation, which is already fairly slow to solve computationally, and furthermore, this is only the equation for one dimension. For accurate rendering, we would need to solve the 3D equivalent of this, which is obviously more complex. Therefore, this is not feasible.
+      </p>
+      <p> There have obviously been developments in other, less computationally ineffective wave based models, and they generally work via a combination of ray based and wave based models.
+      </p>
+
+     <hr>
+     <h2> Comparison </h2>
+     <p> In choosing whether to use a ray-based model, a wave-based model or a combination of the two, one must consider several factors.
+     </p>
+     <p>One such factor is the accuracy with which the model represents diffraction and the other desired effects. In purely ray based models, the accuracy is fairly low, as they are approximations to the wave representations of light. In wave based systems, this will obviously be much better, as they are designed with that representation in mind.
+     </p>
+     <p> However, although wave-based methods are much more accurate, they are slower as there are many complicated calculations involved, and so we use approximations to the true equations to reduce the complexity and increase the speed of the solution.
+     </p>
+
+
+      <div class="container" style="width:100%">
+        <a class="next" href="https://www.doc.ic.ac.uk/~imm1117/topics/india/WaveBRDF.html"></a>
+        <br>
+        <br>
+      </div>
+
+    </div>
+
+
+    <div class="col-sm-2 sidenav">
+
+    </div>
+  </div>
+</div>
+
+<footer >
+  <h3 style="text-align: center ; font-weight: 300">References</h3>
+  <ol >
+  <li class = "spaced">
+   D.  Johnston and P.  Tarjan, "Ray-Tracing Interference and diffraction", Stanford, 2006.
+  </li>
+  <li class = "spaced">
+  S.  Siltanen, T.  Lokki and L.  Savioja, "Rays or Waves? Understanding the Strengths and Weaknesses of Computational Room Acoustics Modeling Techniques", in he International Symposium on Room Acoustics (ISRA2010), Melbourne, Australia, 2010, p. Paper O5a.
+  </li>
+  <li class = "spaced">
+  "Wave Equation | Brilliant Math & Science Wiki", Brilliant.org, 2018. [Online]. Available: https://brilliant.org/wiki/wave-equation/. [Accessed: 09- Mar- 2018].
+  </li>
+  </ol>
+
+
+
+
+
+</footer>
+
+</body>
+</html>

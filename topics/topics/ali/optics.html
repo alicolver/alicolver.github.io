@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--Template: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_webpage&stacked=h  -->
+<html lang="en">
+<head>
+  <title>Optics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../img/icon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/topics/topic.css">
+  <link rel="stylesheet" type="text/css" href="../../css/topics/ali/table.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+    });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+  <!-- end of mathjax configuration -->
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="../../index.html">Home</a></li>
+          <li>
+          <li class="dropdown">
+            <a class="dropbtn">Menu</a>
+            <div class="dropdown-content">
+              <!-- add links to other topics -->
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/clovis/context.html">Context</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/ali/physics.html">Fourier Analysis</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/ali/maxwell.html">Maxwell's Equations</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/ali/optics.html">Optics</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/hannah/brdf.html">BRDF</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/india/SpectralRendering.html">Spectral Rendering</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/india/IndiaSection.html">Rays vs Waves</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/india/WaveBRDF.html">Wave BRDF</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/hannah/diffraction.html">Rendering Diffraction</a>
+              <a href="https://www.doc.ic.ac.uk/~imm1117/topics/india/Difficulties.html">Difficulties</a>
+            </div>
+          </li>
+        </ul>
+        <p class="navbar-text" id="navbar-centre">Physics Based Rendering</p>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://www.doc.ic.ac.uk/~imm1117/cv/ali.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="container-fluid text-center">
+  <div class="row content" >
+    <div class="col-sm-2 sidenav">
+      <!-- don't have to use the sidebar -->
+    </div>
+
+    <div class="col-sm-8 text-left">
+
+        <h1 id="main-body-top" class="text-top text">Optics</h1>
+
+        <h2 id="main-body-diffraction" class="text-body text">Diffraction</h2>
+        <p id="main-body-diffraction">
+          When waves pass around an object or through an
+          <span title="A usually adjustable opening in an optical instrument, such as a microscope, a camera, or a telescope, that limits the amount of light passing through a lens or onto a mirror. The diameter of such an opening.">
+          <b>aperture</b></span>
+          a phenomena called Diffraction occurs [<a href="#references">1</a>].
+          <div class="imagebox" style="width:40%">
+          <img src="https://www.doc.ic.ac.uk/~imm1117/img/ali/diffraction.gif" alt="[5]" title="[5]">
+              <div class="container" style="width:100%">
+                <hr>
+                <p>Animation illustrating diffraction through a gap. [<a href="#references">5</a>]</p>
+              </div>
+            </div>
+          Diffraction is the act of the waves spreading through the aperture,
+          or around the object. Significant diffraction occur when the size of the aperture or obstacle is of similar
+          size to the wavelength of the incident wave.
+          <div class="imagebox" style="width:40%">
+          <img src="https://www.doc.ic.ac.uk/~imm1117/img/ali/diffractiongap.jpg" alt="[1]" title="[1]">
+              <div class="container" style="width:100%">
+                <hr>
+                <p>Diagram illustrating diffraction through a large and small gap. [<a href="#references">1</a>]</p>
+              </div>
+            </div>
+
+        </p>
+        <hr>
+
+        <h2 id="main-body-fouriermaxwell" class="text-body text">Fourier and Maxwell</h2>
+        <p id="main-body-fourierandmaxwell" class="text-body text">
+          The way Fourier optics work is quite different than ordinary ray optics. A lot of us will have
+          came across ray optics whilst we were at school, or maybe university. The reason for this is that
+          ray optics is fairly simple to understand and visualise, this makes it perfect for giving us a grounding
+          of how common light-based phenomena arise, such as refraction. However, ray theory does not describe
+          phenomena such as interference and diffraction, so we need a new way of looking at these problems.
+          The reason for this is that ray optics use approximate solutions to
+          <a href="maxwell.html#equations"><u>Maxwell's equations.</u></a>
+          These solutions are only valid when the light waves interact
+          with objects whose dimensions are much larger than the wavelength of the light. To try and give us a
+          more generalised understanding of a huge variety of optical phenomena, we see the optical field as an
+          exact solution to
+          <span title="see above">Maxwell's equations.</span> [<a href="#references">3</a>]
+          This more general way of thinking about wave optics can accurately explain the operation of
+          Fourier optics devices.
+        </p>
+        <hr>
+        <h2 id="main-body-fourieroptics" class="text-body text">Fourier Optics</h2>
+        <p id="main-body-fourieroptics" class="text-body text">
+          Fourier optics is a way of studying classical optics using the
+          <a href="physics.html#fouriertransform"><u>Fourier transform</u></a>. Based on diffraction theory and the propagation of
+          light, Fourier optics is a powerful tool that uses the Fourier transform to calculate properties of
+          light. [<a href="#references">2</a>]
+        </p>
+        <hr>
+
+        <h2 id="main-body-scalardiffraction" class="text-body text">Scalar Diffraction</h2>
+        <p id="main-body-scalardiffraction" class="text-body text">
+          The study of diffraction, and propagation, of electromagnetic fields has a long history
+          of development and there are a vast number of subtleties that need to be considered carefully
+          to produce consistent and accurate results. In a lens with constant refractive index, or
+          a medium like free space
+          <a href="http://curious.astro.cornell.edu/about-us/101-the-universe/cosmology-and-the-big-bang/general-questions/574-what-do-homogeneity-and-isotropy-mean-intermediate">
+            (<u>a homogeous isotropic material</u>)</a> and in general, the field can be
+          described by a scalar function representing either the electric or the magnetic
+          field amplitude. [<a href="#references">4</a>]
+        </p>
+      <div class="container" style="width:100%">
+        <a class="next" href="https://www.doc.ic.ac.uk/~imm1117/topics/hannah/brdf.html"></a>
+        <br>
+        <br>
+      </div>
+
+    </div>
+
+    <div class="col-sm-2 sidenav">
+
+        </div>
+  </div>
+</div>
+
+
+<footer>
+  <h3 style="text-align:center; font-weight:300">References</h3>
+  <ol id="references">
+    <li class="spaced">
+    "Diffraction of Light", Alternativephysics.org. [Online]. Available:
+    <a herf="http://alternativephysics.org/book/Diffraction.htm">
+      http://alternativephysics.org/book/Diffraction.htm.</a> [Accessed: 12- Mar- 2018].
+    </li>
+    <li class="spaced">
+    Www2.optics.rochester.edu. [Online]. Available:
+    <a href="http://www2.optics.rochester.edu/workgroups/george/FO_BOOK.pdf">
+      http://www2.optics.rochester.edu/workgroups/george/FO_BOOK.pdf.</a> [Accessed: 12- Mar- 2018].
+    </li>
+    <li class="spaced">
+    Ecee.colorado.edu. [Online]. Available:
+    <a href="http://ecee.colorado.edu/~mcleod/teaching/ugol/lecturenotes/From%20Maxwell%20to%20Optics.pdf">
+      http://ecee.colorado.edu/~mcleod/teaching/ugol/lecturenotes/From%20Maxwell%20to%20Optics.pdf.</a>
+      [Accessed: 12- Mar- 2018].
+    </li>
+    <li class="spaced">
+    "Scalar Diffraction", Www2.ph.ed.ac.uk. [Online]. Available:
+    <a href="https://www2.ph.ed.ac.uk/~wjh/teaching/mo/slides/scalar/scalar.pdf">
+      https://www2.ph.ed.ac.uk/~wjh/teaching/mo/slides/scalar/scalar.pdf.</a> [Accessed: 12- Mar- 2018].
+    </li>
+    <li class="spaced">
+    "File:Wavelength=3Dslitwidth.gif - Wikimedia Commons", Commons.wikimedia.org. [Online]. Available:
+    <a href="https://upload.wikimedia.org/wikipedia/commons/b/b8/Wavelength%3Dslitwidth.gif">
+      https://upload.wikimedia.org/wikipedia/commons/b/b8/Wavelength%3Dslitwidth.gif.</a> [Accessed: 13- Mar- 2018].
+    </li>
+  </ol>
+</footer>
+
+</body>
+</html>
