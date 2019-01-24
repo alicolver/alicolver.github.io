@@ -1,0 +1,30 @@
+#bkgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.vid-overlay {
+    position: fixed;
+    top: 30%;
+    color: f1f1f1;
+    width: 30%;
+    padding: 20px;
+}
+
+#pauseBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#pauseBtn:hover {
+    background: #ddd;
+    color: #000;
+}

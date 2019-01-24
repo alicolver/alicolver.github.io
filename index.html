@@ -6,9 +6,27 @@
     <meta charset="utf-8">
     <title>Ali Colver</title>
 
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
   </head>
 
   <body>
+    
+    <video autoplay muted loop id="bkgVideo">
+      <source src="img/background-vid.mp4" type="video/mp4">
+    </video>
+
+    <div class="vid-overlay">
+      <h1>Hi, I'm Ali</h1>
+      <p>I'm a second year JMC student at Imperial College London</p>
+      <button id="pauseBtn" onclick="pauseVideo()">Pause</button>
+    </div>
+
+    <script type="text/javascript" src="js/pause.js"></script>
+    
+    <script type="text/javascript">
+      pauseVideo();
+    </script>
 
   </body>
 
