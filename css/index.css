@@ -4,27 +4,59 @@
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
+    -webkit-filter: grayscale(100%);
+   -moz-filter: grayscale(100%);
+   -ms-filter: grayscale(100%);
+   -o-filter: grayscale(100%);
+   filter: grayscale(100%);
 }
 
 .vid-overlay {
     position: fixed;
     top: 30%;
     color: f1f1f1;
-    width: 30%;
+    width: 35%;
     padding: 20px;
 }
 
+.typer h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 350%;
+    color: white;
+    overflow: hidden;
+    border-right: .15em solid white;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;    
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% {border-color: white; }
+}
+
 #pauseBtn {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 150%;
     width: 200px;
     font-size: 18px;
     padding: 10px;
-    border: none;
-    background: #000;
+    border: 2px solid white;
+    background-color: transparent;
+    outline: #ddd;
     color: #fff;
     cursor: pointer;
 }
 
 #pauseBtn:hover {
-    background: #ddd;
+    background: white;
     color: #000;
 }
