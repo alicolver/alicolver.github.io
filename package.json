@@ -1,8 +1,8 @@
 {
-    "title": "Resume",
-    "name": "startbootstrap-resume",
-    "version": "4.0.0",
-    "description": "Resume is a simple, yet elegant resume and CV theme for Bootstrap 4.",
+    "title": "New Age",
+    "name": "startbootstrap-new-age",
+    "version": "5.0.1",
+    "description": "A one page app landing page HTML theme for Bootstrap.",
     "keywords": [
         "css",
         "sass",
@@ -11,9 +11,9 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/template-overviews/resume",
+    "homepage": "https://startbootstrap.com/template-overviews/new-age",
     "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-resume/issues",
+        "url": "https://github.com/BlackrockDigital/startbootstrap-new-age/issues",
         "email": "feedback@startbootstrap.com"
     },
     "license": "MIT",
@@ -23,21 +23,24 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-resume.git"
+        "url": "https://github.com/BlackrockDigital/startbootstrap-new-age.git"
     },
     "dependencies": {
-        "bootstrap": "4.0.0",
-        "devicons": "^1.8.0",
+        "@fortawesome/fontawesome-free": "5.6.3",
+        "bootstrap": "4.2.1",
         "jquery": "3.3.1",
-        "simple-line-icons": "^2.4.1"
+        "jquery.easing": "^1.4.1",
+        "simple-line-icons": "2.4.1"
     },
     "devDependencies": {
-        "browser-sync": "2.23.6",
-        "gulp": "^3.9.1",
-        "gulp-clean-css": "3.9.2",
-        "gulp-header": "2.0.1",
-        "gulp-rename": "^1.2.2",
-        "gulp-sass": "^3.1.0",
-        "gulp-uglify": "3.0.0"
+        "browser-sync": "2.26.3",
+        "gulp": "4.0.0",
+        "gulp-autoprefixer": "6.0.0",
+        "gulp-clean-css": "4.0.0",
+        "gulp-header": "2.0.7",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rename": "1.4.0",
+        "gulp-sass": "4.0.2",
+        "gulp-uglify": "3.0.1"
     }
 }
