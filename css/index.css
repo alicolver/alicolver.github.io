@@ -42,10 +42,10 @@ li:last-child {
 
 @-webkit-keyframes blackWhite {  
     0% { color: white; }
-    39% { color: white; }
-    40% { color: black; }
-    65% { color: black; }
-    66% { color: white; }
+    43% { color: white; }
+    44% { color: black; }
+    69% { color: black; }
+    70% { color: white; }
     100% {color: white; }
 }
   
