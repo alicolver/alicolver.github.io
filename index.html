@@ -18,24 +18,35 @@
 
   <body>
     
-    <video autoplay muted loop id="bkgVideo">
-      <source src="img/background-vid.mp4" type="video/mp4">
-        Sorry, your browser is not currently supported.
-    </video>
+    <div class="landing"> 
+      <a name="home">
+      <video autoplay muted loop id="bkgVideo">
+        <source src="img/background-vid.mp4" type="video/mp4">
+          Sorry, your browser is not currently supported.
+      </video>
 
-    <div class="topnav">
-      <li><a class="active" href="#home">Home</a></li>
-      <li style="float:right"><a href="#contact">Contact Me</a></li>
-      <li style="float:right;border-left:.15em solid white"><a href="#about">About</a></li>
-      <li style="float:right"><a href="#more">More</a></li>
+      <div class="topnav">
+        <li><a class="active" href="#home">Home</a></li>
+        <li style="float:right"><a href="#contact">Contact Me</a></li>
+        <li style="float:right;border-left:.15em solid white"><a href="#about">About</a></li>
+        <li style="float:right"><a href="#more">More</a></li>
+      </div>
+
+      <div class="vid-overlay">
+        <div class="typer">
+          <h1>Hi! I'm Ali.</h1>
+          <br>
+          <button id="pauseBtn" onclick="pauseVideo()">Pause</button>
+          <button id="pauseBtn" onclick="window.location.href='#more'">See More &#8595;</button>
+        </div>
+      </div>
+    </a>
     </div>
 
-    <div class="vid-overlay">
-      <div class="typer">
-        <h1>Hi! I'm Ali.</h1>
-        <br>
-        <button id="pauseBtn" onclick="pauseVideo()">Pause</button>
-      </div>
+    <div class="more">
+      <a name="more">
+        More Coming Soon
+      </a>
     </div>
 
     <script type="text/javascript" src="js/pause.js"></script>
