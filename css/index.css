@@ -11,6 +11,48 @@
     filter: grayscale(100%);
 }
 
+.topnav {
+    background-color: transparent;
+    overflow: hidden;
+    position: fixed;
+    width: 100%; 
+}
+
+.topnav a {
+    font-family: 'Courier New', Courier, monospace;
+    float: left;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 175%;
+    -webkit-animation-name: blackWhite;  
+    -webkit-animation-iteration-count: infinite;  
+    -webkit-animation-duration: 14.3s; 
+    text-decoration: none;
+}
+
+.topnav li {
+    border-right: .15em solid white;
+    list-style: none;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+@-webkit-keyframes blackWhite {  
+    0% { color: white; }
+    39% { color: white; }
+    40% { color: black; }
+    59% { color: black; }
+    60% { color: white; }
+    100% {color: white; }
+}
+  
+.topnav a:hover {
+    text-decoration: underline;
+}
+
 .vid-overlay {
     position: fixed;
     top: 30%;
