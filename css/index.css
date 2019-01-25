@@ -45,7 +45,7 @@ body {
     font-size: 175%;
     -webkit-animation-name: blackWhite;  
     -webkit-animation-iteration-count: infinite;  
-    -webkit-animation-duration: 14.5s; 
+    -webkit-animation-duration: 14.2s; 
     text-decoration: none;
 }
 
@@ -119,4 +119,32 @@ li:last-child {
 #pauseBtn:hover {
     background: white;
     color: #000;
+}
+
+.down-arrow {
+    position: absolute;
+    margin: 0 auto;
+    bottom: 0%;
+    left: 45%;
+    width: 10%;
+    height: 10%;
+}
+
+#arrowBtn {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 300%;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+.section-1 .slide-in-demo {
+    position: relative;
+    top: 15%;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    font-size: 4em;
+    height: 100%;
 }

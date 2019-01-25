@@ -13,13 +13,15 @@
     <title>Ali Colver - Home</title>
 
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
 
   </head>
 
   <body>
     
-    <div class="landing"> 
-      <a name="home">
+    <div class="landing">
       <video autoplay muted loop id="bkgVideo">
         <source src="img/background-vid.mp4" type="video/mp4">
           Sorry, your browser is not currently supported.
@@ -40,12 +42,31 @@
           <button id="pauseBtn" onclick="window.location.href='#more'">See More &#8595;</button>
         </div>
       </div>
-    </a>
+
+      <div class="down-arrow">
+          <button id="arrowBtn" onclick="window.location.href='#more'">&#8595;</button>
+      </div>
+
+
     </div>
 
     <div class="more">
       <a name="more">
-        More Coming Soon
+          <section class="section section-1">
+              <h3 class="slide-in-demo">More Coming Soon</h3>
+          </section>
+      </a>
+    </div>
+
+    <div class="about">
+      <a name="about">
+
+      </a>
+    </div>
+
+    <div class="contact">
+      <a name="contact">
+        
       </a>
     </div>
 
@@ -53,6 +74,29 @@
     
     <script type="text/javascript">
       pauseVideo();
+    </script>
+
+    <script type="text/javascript" src="js/jScrollability.js"></script>
+
+    <script type="text/javascript">
+      (function($) {
+        $(document).ready(function() {
+          $.jScrollability([
+            {
+                'selector': '.slide-in-demo',
+                'start': 'parent',
+                'end': 'parent',
+                'fn': {
+                    'left': {
+                        'start': 100,
+                        'end': 0,
+                        'unit': '%'
+                      }
+                }
+              }
+          ]);
+        });
+      })(jQuery);
     </script>
 
   </body>
