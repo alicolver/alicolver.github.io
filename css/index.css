@@ -32,49 +32,71 @@ body {
 }
 
 .topnav {
+    position: fixed;
     background-color: transparent;
     overflow: visible;
-    position: absolute;
-    width: 100%; 
+    width: 50px;
+    height: 50px;
+    right: 2%;
+    top: 2%;
+    z-index: 10;
 }
 
-.topnav a {
-    font-family: 'Courier New', Courier, monospace;
-    float: left;
-    color: #fff;
-    text-align: center;
-    padding: 14px 16px;
-    font-size: 175%;
-    -webkit-animation-name: blackWhite;  
-    -webkit-animation-iteration-count: infinite;  
-    -webkit-animation-duration: 14.2s; 
-    text-decoration: none;
+.topnav img {
+    width: 100%;
+    height: 100%;
 }
 
-.topnav li {
-    border-right: .15em solid white;
-    list-style: none;
+
+.sidenav {
+    position: fixed;
+    background-color: transparent;
+    overflow: visible;
+    bottom: 10%;
+    right: 2%;
+    width: 50px;
+    height: 150px;
+    z-index: 10;
+
 }
 
-li:last-child {
-    border-right: none;
+.sidenav img {
+    width: 50px;
+    height: 50px;
 }
 
-@-webkit-keyframes blackWhite {  
-    0% { color: white; }
-    43% { color: white; }
-    44% { color: black; }
-    69% { color: black; }
-    70% { color: white; }
-    100% {color: white; }
+.twitter {
+    position: fixed;
+    right: 25px;
+    bottom: 200px;
+    background-image: url("../img/black-twitter.svg");
+    width: 50px;
+    height: 50px;
+    z-index: 10;
 }
-  
-.topnav a:hover {
-    text-decoration: underline;
+
+.github {
+    position: fixed;
+    right: 25px;
+    bottom: 125px;
+    background-image: url("../img/black-github.svg");
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+}
+
+.linkedin {
+    position: fixed;
+    right: 25px;
+    bottom: 50px;
+    background-image: url("../img/black-in.svg");
+    width: 50px;
+    height: 50px;
+    z-index: 10;
 }
 
 .vid-overlay {
-    position: relative;
+    position: absolute;
     top: 30%;
     color: f1f1f1;
     width: 35%;
@@ -213,6 +235,7 @@ img {
 .terminal-typer {
     position: relative;
     display: inline-block;
+    overflow: hidden;
 }
 
 .terminal-typer p {
