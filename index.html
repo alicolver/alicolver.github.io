@@ -52,7 +52,7 @@
     <div class="more">
       <a name="more">
 
-          <img src="img/terminal.png">
+        <img src="img/terminal.png">
 
         <div class="terminal">
           ali@alicolver.com:home$ echo Hello World!
@@ -67,7 +67,7 @@
           <br>
           <div class="terminal-typer">
             <div class="typer">
-              <h1>Compiling..1%.....50%....100% ./next_page</h1>
+              <p id="typewriter"></p>
             </div>
           </div>
         </div>
@@ -89,6 +89,9 @@
           <i>(for this website)</i> and I'm keen to try and share some of the things I've picked up.
         </div>
 
+        <div class="down-arrow">
+          <button id="arrowBtn" style="color:black" onclick="typeWriter()">&#8595;</button>
+        </div>
 
       </a>
     </div>
@@ -132,6 +135,8 @@
         });
       });
     </script>
+    
+    <script type="text/javascript" src="js/typewriter.js"></script>
 
   </body>
 
