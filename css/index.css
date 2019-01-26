@@ -33,7 +33,7 @@ body {
 
 .topnav {
     background-color: transparent;
-    overflow: hidden;
+    overflow: visible;
     position: absolute;
     width: 100%; 
 }
@@ -92,7 +92,7 @@ li:last-child {
     letter-spacing: .15em;
     animation:
         typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;    
+        blink-caret .75s step-end infinite;
 }
 
 @keyframes typing {
@@ -154,12 +154,20 @@ li:last-child {
 
 .terminal {
     position: absolute;
-    left: 5%;
-    top: 35%;
+    left: 6%;
+    top: 27%;
     width: 40%;
     height: 30%;
-    background: black;
     padding: 1%;
+    line-height: 130%;
+}
+
+img {
+    position: absolute;
+    width: 50%;
+    left: 2%;
+    top: 20%;
+    height: 60%;
 }
 
 .terminal-text {
@@ -200,4 +208,30 @@ li:last-child {
 
 .hoverholder:hover .hoverbox {
     visibility: visible;
+}
+
+.terminal-typer {
+    position: relative;
+    display: inline-block;
+}
+
+.terminal-typer h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100%;
+    color: white;
+    overflow: hidden;
+    border-right: .15em solid white;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation-delay: 8s;
+    animation-name: typing-terminal, blink-caret;
+    animation-duration: 3.5s steps(40, end);
+    animation-duration: .75s step-end infinite;    
+}
+
+
+@keyframes typing-terminal {
+    from { width: 0% }
+    to { width: 100% }
 }
