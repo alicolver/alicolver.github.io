@@ -14,6 +14,8 @@
 
     <link rel="stylesheet" type="text/css" href="css/index.css">
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   </head>
 
   <body>
@@ -49,7 +51,29 @@
 
     <div class="more">
       <a name="more">
-          <h1>More Coming Soon</h3>
+
+        <div class="terminal">
+          <p>ali@alicolver.com:home$</p>
+        </div>
+
+        <div class="terminal-text">
+          I'm Ali. I'm a second year JMC student at <b>Imperial College London</b>. In the past I have 
+          worked mostly with three languages;
+          <div class="hoverholder">
+            <span class="hoverbox">Most of my uni work has been written in Java, most recently a compiler</span>Java
+          </div>, 
+          <div class="hoverholder">
+              <span class="hoverbox" style="width:1800%; margin-left: -900%">Many projects including writing an assembler and some OS work</span>
+              C
+          </div>, and 
+          <div class="hoverholder">
+                <span class="hoverbox">My haskell projects are linked below</span>
+                Haskell
+            </div> - although more recently I've been learning some JavaScript 
+          <i>(for this website)</i> and I'm keen to try and share some of the things I've picked up.
+        </div>
+
+
       </a>
     </div>
 
@@ -69,6 +93,28 @@
     
     <script type="text/javascript">
       pauseVideo();
+    </script>
+
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+    
+      $(window).scroll( function(){
+    
+        $('.terminal').each( function(i){
+            
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'opacity':'1'},2500);
+                    
+            }
+          
+          }); 
+        });
+      });
     </script>
 
   </body>
