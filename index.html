@@ -12,7 +12,8 @@
 
     <title>Ali Colver - Home</title>
 
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link id="size-stylesheet" rel="stylesheet" type="text/css" href="css/index.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -123,40 +124,9 @@
 
 
     <script type="text/javascript" src="js/pause.js"></script>
-    
-    <script type="text/javascript">
-      pauseVideo();
-    </script>
-
     <script type="text/javascript" src="js/typewriter.js"></script>
-
-    <script type="text/javascript">
-
-      $(document).ready(function() {
-    
-      $(window).scroll( function(){
-    
-        $('.terminal-text').each( function(i){
-            
-            var bottom_of_object = $(this).position().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-            
-            if( bottom_of_window > bottom_of_object ){
-                
-                $(this).animate({'opacity':'1'},2500);
-                    
-            }
-          
-          }); 
-        });
-      });
-    </script>
-
-    <script type="text/javascript">
-      if (screen.width <= 700) {
-        document.location = mobile.html;
-      }
-    </script>
+    <script type="text/javascript" src="js/fadein.js"></script>
+    <script type="text/javascript" src="js/selectcss.js"></script>
 
   </body>
 
