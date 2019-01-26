@@ -1,6 +1,6 @@
 function adjustStyle(width) {
     width = parseInt(width);
-    if (width < 1001) {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
       $("#size-stylesheet").attr("href", "css/mobile.css");
     } else {
        $("#size-stylesheet").attr("href", "css/index.css"); 

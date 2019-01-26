@@ -11,6 +11,10 @@ body {
 
 .landing {
     height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    right: 0;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,10 +24,10 @@ body {
 
 #bkgVideo {
     position: absolute;
+    margin: 0;
+    overflow: hidden;
     right: 0;
     bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
@@ -35,8 +39,6 @@ body {
     position: fixed;
     background-color: transparent;
     overflow: visible;
-    width: 50px;
-    height: 50px;
     right: 2%;
     top: 2%;
     z-index: 10;
@@ -60,18 +62,9 @@ body {
 
 }
 
-.sidenav img {
-    width: 50px;
-    height: 50px;
-}
-
 .twitter {
     position: fixed;
-    right: 25px;
-    bottom: 200px;
     background-image: url("../img/black-twitter.svg");
-    width: 50px;
-    height: 50px;
     z-index: 10;
 }
 
@@ -81,11 +74,7 @@ body {
 
 .github {
     position: fixed;
-    right: 25px;
-    bottom: 125px;
     background-image: url("../img/black-github.svg");
-    width: 50px;
-    height: 50px;
     z-index: 10;
 }
 
@@ -95,11 +84,7 @@ body {
 
 .linkedin {
     position: fixed;
-    right: 25px;
-    bottom: 50px;
     background-image: url("../img/black-in.svg");
-    width: 50px;
-    height: 50px;
     z-index: 10;
 }
 
@@ -111,7 +96,7 @@ body {
     position: absolute;
     top: 30%;
     color: f1f1f1;
-    padding: 20px;
+    padding: 3%;
 }
 
 .typer h1 {
@@ -165,7 +150,6 @@ body {
 
 #arrowBtn {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 300%;
     width: 100%;
     background-color: transparent;
     color: white;
