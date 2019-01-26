@@ -119,11 +119,16 @@
       </a>
     </div>
 
+
+
+
     <script type="text/javascript" src="js/pause.js"></script>
     
     <script type="text/javascript">
       pauseVideo();
     </script>
+
+    <script type="text/javascript" src="js/typewriter.js"></script>
 
     <script type="text/javascript">
 
@@ -146,8 +151,12 @@
         });
       });
     </script>
-    
-    <script type="text/javascript" src="js/typewriter.js"></script>
+
+    <script type="text/javascript">
+      if (screen.width <= 700) {
+        document.location = mobile.html;
+      }
+    </script>
 
   </body>
 
