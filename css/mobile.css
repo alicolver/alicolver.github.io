@@ -17,7 +17,7 @@
     top: 10%;
     width: 100%;
     height: 40%;
-    font-size: 80%;
+    font-size: 150%;
 }
 
 img {
@@ -29,5 +29,5 @@ img {
 .terminal-text {
     top: 60%;
     widows: 90%;
-    font-size: 100%;
+    font-size: 250%;
 }
