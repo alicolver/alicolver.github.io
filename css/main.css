@@ -294,6 +294,15 @@ body {
     height: 10%;
 }
 
+.down-arrow {
+    position: absolute;
+    margin: 0 auto;
+    bottom: 0%;
+    left: 45%;
+    width: 10%;
+    height: 10%;
+}
+
 .scroll-downs {
     position: absolute;
     top: 0;
@@ -407,4 +416,12 @@ img {
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: .15em;
+}
+
+#arrowBtn {
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    border: none;
 }

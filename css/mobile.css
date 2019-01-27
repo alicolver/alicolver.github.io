@@ -66,3 +66,7 @@ img {
     height: 150px;
     right: 100px;
 }
+
+#arrowBtn {
+    font-size: 800%;
+}
