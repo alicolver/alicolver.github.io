@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.a617e044.chunk.css",
-    "main.js": "/static/js/main.b5989671.chunk.js",
-    "main.js.map": "/static/js/main.b5989671.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.07da1ec3.js",
-    "runtime-main.js.map": "/static/js/runtime-main.07da1ec3.js.map",
-    "static/js/2.0e75363a.chunk.js": "/static/js/2.0e75363a.chunk.js",
-    "static/js/2.0e75363a.chunk.js.map": "/static/js/2.0e75363a.chunk.js.map",
-    "static/js/3.adf433db.chunk.js": "/static/js/3.adf433db.chunk.js",
-    "static/js/3.adf433db.chunk.js.map": "/static/js/3.adf433db.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.0e75363a.chunk.js.LICENSE.txt": "/static/js/2.0e75363a.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/static/media/logo.6ce24c58.svg"
+    "main.css": "/alicolver.github.io/static/css/main.a617e044.chunk.css",
+    "main.js": "/alicolver.github.io/static/js/main.b5989671.chunk.js",
+    "main.js.map": "/alicolver.github.io/static/js/main.b5989671.chunk.js.map",
+    "runtime-main.js": "/alicolver.github.io/static/js/runtime-main.2f1e1fc1.js",
+    "runtime-main.js.map": "/alicolver.github.io/static/js/runtime-main.2f1e1fc1.js.map",
+    "static/js/2.0e75363a.chunk.js": "/alicolver.github.io/static/js/2.0e75363a.chunk.js",
+    "static/js/2.0e75363a.chunk.js.map": "/alicolver.github.io/static/js/2.0e75363a.chunk.js.map",
+    "static/js/3.adf433db.chunk.js": "/alicolver.github.io/static/js/3.adf433db.chunk.js",
+    "static/js/3.adf433db.chunk.js.map": "/alicolver.github.io/static/js/3.adf433db.chunk.js.map",
+    "index.html": "/alicolver.github.io/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/alicolver.github.io/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.0e75363a.chunk.js.LICENSE.txt": "/alicolver.github.io/static/js/2.0e75363a.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/alicolver.github.io/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.07da1ec3.js",
+    "static/js/runtime-main.2f1e1fc1.js",
     "static/js/2.0e75363a.chunk.js",
     "static/css/main.a617e044.chunk.css",
     "static/js/main.b5989671.chunk.js"
